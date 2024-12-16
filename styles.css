@@ -1,0 +1,63 @@
+/* General styles */
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+  font-family: sans-serif;
+}
+
+/* Background video styles */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensures video is behind other elements */
+}
+
+/* Title styles */
+.titles {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  color: gold;
+  text-align: left;
+}
+
+.large-title {
+  font-family: "Consolas", monospace;
+  font-size: 24px;
+  margin: 0;
+}
+
+.medium-title {
+  font-family: "Comic Sans MS", cursive;
+  font-size: 20px;
+  margin: 5px 0 0 0;
+}
+
+/* Flash effect styles */
+.flashes {
+  position: fixed;
+  top: 46%;
+  left: 46%;
+  width: 8%;
+  height: 8%;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0) 70%);
+  animation: flash-animation 2s infinite;
+}
+
+/* Flash animation */
+@keyframes flash-animation {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
