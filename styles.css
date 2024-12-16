@@ -25,6 +25,8 @@ body {
   z-index: 2;
   color: gold;
   text-align: left;
+  opacity: 1; /* Default visibility for titles */
+  transition: opacity 1s ease-in-out; /* Smooth fade */
 }
 
 .large-title {
@@ -37,27 +39,27 @@ body {
   font-family: "Comic Sans MS", cursive;
   font-size: 20px;
   margin: 5px 0 0 0;
+  opacity: 0; /* Hidden by default for fade-in effect */
 }
 
 /* Flash effect styles */
 .flashes {
   position: fixed;
-  top: 46%;
-  left: 46%;
   width: 8%;
   height: 8%;
   z-index: 1;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0) 70%);
-  animation: flash-animation 2s infinite;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 80%);
+  opacity: 0;
+  animation: flash-animation 3s infinite;
 }
 
 /* Flash animation */
 @keyframes flash-animation {
-  0%, 100% {
+  0%, 95% {
     opacity: 0;
   }
-  50% {
+  25%, 85% {
     opacity: 1;
   }
 }
